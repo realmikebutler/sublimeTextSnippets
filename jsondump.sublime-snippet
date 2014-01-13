@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+Ti.API.info( "$1 = #{JSON.stringify($1, null, 4)}" )
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jsondump</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+	<scope>source.js</scope>
+</snippet>
