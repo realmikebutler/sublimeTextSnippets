@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+Ti.API.info( "[$TM_FILENAME:$TM_LINE_NUMBER] ${1} = '#{${1}}'" )
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>infoValue</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+	<scope>source.javascript</scope>
+</snippet>
