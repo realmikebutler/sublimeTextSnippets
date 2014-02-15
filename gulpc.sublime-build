@@ -1,0 +1,3 @@
+{
+	"shell_cmd": "osascript -e \"tell application \\\"Terminal\\\" to do script \\\"gulpc\\\" in first window\"; coffee -c Gulpfile.coffee; gulp"
+}
