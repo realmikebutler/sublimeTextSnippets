@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+dialog = Ti.UI.createAlertDialog
+	title: '${1:title}'
+	message: '${2:message}'
+	buttonNames: ['OK', 'Cancel']
+	cancel: 1
+	
+dialog.addEventListener('click', @dialogDidFinish )
+dialog.show();
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>alert</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+	<description>Alert With Callback</description>
+</snippet>
