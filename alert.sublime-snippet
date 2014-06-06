@@ -6,7 +6,10 @@ dialog = Ti.UI.createAlertDialog
 	buttonNames: ['OK', 'Cancel']
 	cancel: 1
 	
-dialog.addEventListener('click', @dialogDidFinish )
+dialog.addEventListener 'click', (event) ->
+	if event.index is event.source.cancel
+		console.log( "Alert - Cancel WAS NOT pressed, so do something")
+
 dialog.show();
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
