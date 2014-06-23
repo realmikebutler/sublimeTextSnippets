@@ -1,0 +1,59 @@
+<snippet>
+	<content><![CDATA[
+#---------------------------------------------------------------------------
+#
+#   ${1:description}
+#
+
+# utilities 		= require 'utilities'
+# viewUtilities 	= require 'viewUtilities'
+# teamworkUtilities = require 'teamworkUtilities'
+# dateUtilities 	= require 'DateUtilities'
+
+baseClass 		= require 'APIContentController'
+module.exports 	= class ${TM_FILENAME/(List|.coffee)//g}List extends baseClass
+
+	constructor:( ) ->
+		@registerTemplate( '${TM_FILENAME/(List|.coffee)//g}' )
+		@showSearch 		?= true
+		@actions			?= [@actionsAdd, @actionsReload]
+		@filters 			?= [
+			{id:anID,	title:"${3:filterTitle}", 		filterAction:"${4:apiCall}", }
+		]
+
+		super()
+
+	load : (filter) =>
+		@API()[filter]()
+		
+	group: (items) => 
+		utilities.groupChronologicallyByProject( items )
+
+	toListItem : (anItem) =>
+		info = 
+			properties:
+				searchableText: ""
+			${5:name}:
+				text: anItem.${5:name}
+			icon:
+				image:"/images/${6:imageName}"
+			itemID:anItem.id
+
+	didSelectRow:(event, item)=>
+		@pushControllerNamed( "${7:controllerName}", {id:item.itemID} )
+
+#	didTapAdd: =>
+#		@showAlloyModal( "${TM_FILENAME/List.coffee//g}Creator", {} )
+
+#	didTapEdit: =>
+#		@showAlloyModal( "${TM_FILENAME/List.coffee//g}Editor", {} )
+
+#	delete: =>
+#		@API().delete${TM_FILENAME/List.coffee//g}WithID( @${2}, @didDelete )
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>lvClass</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+</snippet>

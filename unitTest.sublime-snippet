@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+${1:someLib} 	= require '../../app/controllers/node_modules/${1:someLib}'
+
+chai 	= require 'chai'
+expect 	= chai.expect
+should 	= chai.should
+
+
+describe '${2:testName}', ->
+
+	describe '#${3:methodName}', ->
+		# ${5:varName} = undefined
+		# beforeEach ->
+		# 	${5:varName} = 
+
+		it 'should ${4:expectation}', ->
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>testSkeleton</tabTrigger>
+	<description>Start a new Unit Test File</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+</snippet>

@@ -1,0 +1,94 @@
+<snippet>
+	<content><![CDATA[
+#---------------------------------------------------------------------------
+#
+#   View the details of an individual ${TM_FILENAME/Viewer.coffee//g} item
+#
+
+viewerTemplates 	= require "viewerAttributesHelper"
+# teamworkUtilities = require 'teamworkUtilities'
+# utilities 		= require 'utilities'
+# viewUtilities 	= require 'viewUtilities'
+# dateUtilities 	= require 'DateUtilities'
+
+#baseClass 		= require 'CommentableViewer'
+baseClass 		= require 'APIContentController'
+module.exports 	= class ${TM_FILENAME/(List|.coffee)//g} extends baseClass
+
+	constructor:( @${2:model}ID ) ->
+		@dontShowRowSeperators = true
+		@registerTemplate( '${TM_FILENAME/(List|.coffee)//g}' )
+		@registerTemplate( viewerTemplates.filename )
+		@showSearch 		?= false
+		@actions			?= [@actionsDelete, @actionsReload]
+		@title				?= "${TM_FILENAME/(List|.coffee)//g}"
+
+		super()
+
+#	afterBuildUI : =>
+#		@listView.backgroundColor = "#F3F3F3"
+
+	load : =>
+#		@API().get${TM_FILENAME/Viewer.coffee//g}WithID( @${2}ID ) 
+		
+#	loadComments:->
+#		@API().getCommentsFor${TM_FILENAME/Viewer.coffee//g}( @${2}ID, @didLoadComments )
+
+	didLoad : (@${2}) =>
+		rows = [
+			@createDetailRow( @${2} )
+
+			viewerTemplates.topPaddingRow()
+
+#			viewerTemplates.projectRow( @${2} )
+#			viewerTemplates.responsibleRow( @${2} )
+#			viewerTemplates.creatorRow( @${2} )
+#			viewerTemplates.completerRow( @${2} )
+#			viewerTemplates.modifiedRow( @${2} )
+#			viewerTemplates.simplePrivacyRow( @${2}, "This @${TM_FILENAME/Viewer.coffee//g} is Private" )
+#			viewerTemplates.simpleReminderRow( @${2} )
+
+			viewerTemplates.bottomPaddingRow()
+		]
+
+		@listView.setSections( [@createSection( rows )] ) #, @createCommentSection( @comments )] )
+
+	createDetailRow : (an${TM_FILENAME/Viewer.coffee//g}) =>
+		info = 
+			${5:name}:
+				text: an${TM_FILENAME/Viewer.coffee//g}.${5:name}
+			icon:
+				image:"/images/${6:imageName}"
+			itemID:an${TM_FILENAME/Viewer.coffee//g}.id
+
+	# didSelectRow:(event, item)=>
+	#	viewerTemplates.handleRowSelection( event, item, @listView, this )
+	## 	didHandleSelection = viewerTemplates.handleRowSelection( event, item, @listView, this )
+		
+	## 	if not didHandleSelection
+	## 		type = viewerTemplates.getExpandableComponentType( item )
+	## 		if type?
+	## 			switch type
+	## 				when some-type-goes-here
+	## 					viewerTemplates.updateExandableComponent( @listView, item, event.sectionIndex, @create some-type-goes-here( @${2} ) )
+
+#	didTapAdd: =>
+#		@showAlloyModal( "${TM_FILENAME/Viewer.coffee//g}Creator", {} )
+
+#	didTapEdit: =>
+#		@showAlloyModal( "${TM_FILENAME/Viewer.coffee//g}Editor", {} )
+
+#	delete: =>
+#		@API().delete${TM_FILENAME/Viewer.coffee//g}WithID( @${2}, @didDelete )
+
+#	comment: () =>
+#		[notifyList, notifyDescription] = templateHelper.generateNotifyList( @${2}, @comments )
+#		@showCommentModal( "createCommentFor${TM_FILENAME/Viewer.coffee//g}WithID", @${2}ID, "${TM_FILENAME/Viewer.coffee//g}", notifyList, notifyDescription )
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>lvViewerClass</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+</snippet>

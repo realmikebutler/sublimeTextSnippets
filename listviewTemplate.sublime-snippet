@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+info = 
+	template: "${1:templateName}Row"
+
+	properties:
+		searchableText: ""
+	icon:
+		image: ${2:anItem.url}
+	name:
+		text: ${3:anItem.title}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>lvTemplate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+</snippet>
