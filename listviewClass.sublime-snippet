@@ -10,7 +10,7 @@
 # teamworkUtilities = require 'teamworkUtilities'
 # dateUtilities 	= require 'DateUtilities'
 
-baseClass 		= require 'APIContentController'
+baseClass 		= require 'APIListViewController'
 module.exports 	= class ${TM_FILENAME/(List|.coffee)//g}List extends baseClass
 
 	constructor:( ) ->

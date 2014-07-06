@@ -6,16 +6,19 @@
 #
 
 viewerTemplates 	= require "viewerAttributesHelper"
-# teamworkUtilities = require 'teamworkUtilities'
+teamworkUtilities = require 'teamworkUtilities'
 # utilities 		= require 'utilities'
 # viewUtilities 	= require 'viewUtilities'
 # dateUtilities 	= require 'DateUtilities'
 
 #baseClass 		= require 'CommentableViewer'
-baseClass 		= require 'APIContentController'
+baseClass 		= require 'APIListViewController'
 module.exports 	= class ${TM_FILENAME/(List|.coffee)//g} extends baseClass
 
-	constructor:( @${2:model}ID ) ->
+	constructor:( info ) ->
+		if info?
+			@${2:model}ID = info.id
+
 		@dontShowRowSeperators = true
 		@registerTemplate( '${TM_FILENAME/(List|.coffee)//g}' )
 		@registerTemplate( viewerTemplates.filename )
@@ -45,16 +48,17 @@ module.exports 	= class ${TM_FILENAME/(List|.coffee)//g} extends baseClass
 #			viewerTemplates.creatorRow( @${2} )
 #			viewerTemplates.completerRow( @${2} )
 #			viewerTemplates.modifiedRow( @${2} )
-#			viewerTemplates.simplePrivacyRow( @${2}, "This @${TM_FILENAME/Viewer.coffee//g} is Private" )
+#			viewerTemplates.simplePrivacyRow( @${2}, "This ${TM_FILENAME/Viewer.coffee//g} is Private" )
 #			viewerTemplates.simpleReminderRow( @${2} )
 
 			viewerTemplates.bottomPaddingRow()
 		]
 
-		@listView.setSections( [@createSection( rows )] ) #, @createCommentSection( @comments )] )
+		@setSections( [@createSection( rows )] ) #, @createCommentSection( @comments )] )
 
 	createDetailRow : (an${TM_FILENAME/Viewer.coffee//g}) =>
 		info = 
+			template:	<<Template name goes here - must be same as the one used in the xib>>
 			${5:name}:
 				text: an${TM_FILENAME/Viewer.coffee//g}.${5:name}
 			icon:
@@ -79,10 +83,10 @@ module.exports 	= class ${TM_FILENAME/(List|.coffee)//g} extends baseClass
 #		@showAlloyModal( "${TM_FILENAME/Viewer.coffee//g}Editor", {} )
 
 #	delete: =>
-#		@API().delete${TM_FILENAME/Viewer.coffee//g}WithID( @${2}, @didDelete )
+#		@API().delete${TM_FILENAME/Viewer.coffee//g}WithID( @${2}ID, @didDelete )
 
 #	comment: () =>
-#		[notifyList, notifyDescription] = templateHelper.generateNotifyList( @${2}, @comments )
+#		[notifyList, notifyDescription] = teamworkUtilities.generateNotifyList( @${2}, @comments )
 #		@showCommentModal( "createCommentFor${TM_FILENAME/Viewer.coffee//g}WithID", @${2}ID, "${TM_FILENAME/Viewer.coffee//g}", notifyList, notifyDescription )
 
 
