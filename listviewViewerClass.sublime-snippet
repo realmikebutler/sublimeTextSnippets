@@ -80,7 +80,7 @@ module.exports 	= class ${TM_FILENAME/(List|.coffee)//g} extends baseClass
 #		@showAlloyModal( "${TM_FILENAME/Viewer.coffee//g}Creator", {} )
 
 #	didTapEdit: =>
-#		@showAlloyModal( "${TM_FILENAME/Viewer.coffee//g}Editor", {} )
+#		@showAlloyModal( "${TM_FILENAME/Viewer.coffee//g}Editor", {${2}:@${2}} )
 
 #	delete: =>
 #		@API().delete${TM_FILENAME/Viewer.coffee//g}WithID( @${2}ID, @didDelete )
