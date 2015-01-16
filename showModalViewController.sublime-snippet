@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+navigationUtilities.showModal( ${1:name}, ${2:options} )
+]]></content>
+
+	<description>show a normal view controller</description>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>shows</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+</snippet>
