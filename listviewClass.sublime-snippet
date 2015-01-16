@@ -13,10 +13,11 @@
 baseClass 		= require 'APIListViewController'
 module.exports 	= class ${TM_FILENAME/(List|.coffee)//g}List extends baseClass
 
+	getActionButtons: => [@createActionButtonEdit(), @createActionButtonTimer(), @createActionButtonDelete(), @createActionButtonShowInBrowser(), @createActionButtonReload()]
+
 	constructor:( ) ->
 		@registerTemplate( '${TM_FILENAME/(List|.coffee)//g}' )
 		@showSearch 		?= true
-		@actions			?= [@actionsAdd, @actionsReload]
 		@filters 			?= [
 			{id:anID,	title:"${3:filterTitle}", 		filterAction:"${4:apiCall}", }
 		]

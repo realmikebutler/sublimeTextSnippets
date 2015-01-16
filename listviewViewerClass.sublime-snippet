@@ -15,6 +15,8 @@ teamworkUtilities = require 'teamworkUtilities'
 baseClass 		= require 'APIListViewController'
 module.exports 	= class ${TM_FILENAME/(List|.coffee)//g} extends baseClass
 
+	getActionButtons: => [@createActionButtonEdit(), @createActionButtonTimer(), @createActionButtonDelete(), @createActionButtonShowInBrowser(), @createActionButtonReload()]
+
 	constructor:( info ) ->
 		if info?
 			@${2:model}ID = info.id
@@ -23,7 +25,6 @@ module.exports 	= class ${TM_FILENAME/(List|.coffee)//g} extends baseClass
 		@registerTemplate( '${TM_FILENAME/(List|.coffee)//g}' )
 		@registerTemplate( viewerTemplates.filename )
 		@showSearch 		?= false
-		@actions			?= [@actionsDelete, @actionsReload]
 		@title				?= "${TM_FILENAME/(List|.coffee)//g}"
 
 		super()
