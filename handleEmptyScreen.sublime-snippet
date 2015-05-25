@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+handleEmptyScreen: =>
+	@showEmptyPlaceholderView
+		icon:			"/images/no-${1}.png"
+		title:			"No ${1}"
+		message:		${2}
+		buttonTitle:	${3}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>handleEmptyScreen</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+</snippet>
