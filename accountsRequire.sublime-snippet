@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-accounts 	= require 'AccountsHelper'
+accounts 		= require 'AccountsHelper'
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>accountRequire</tabTrigger>
