@@ -4,30 +4,30 @@
 #
 #   This Xibble based view controller does: {$1}
 #
-navUtils 				= require 'navigationUtilities'
-
+navUtils 		= require 'navigationUtilities'
 XibbleViewController 	= require 'XibbleViewController'
+
 module.exports = class ${TM_FILENAME} extends XibbleViewController
 
 	defaultXibbleName: -> 		# unfortunately due to minification we can't just use the class name to auto load the xibble
 		"${TM_FILENAME}"
 
 	constructor: (@args) ->
-		super()
+		super( @args )
 		
-	cleanup: => 				# Implement this to free up any event listeners or any resource...
-		super()
+#	cleanup: => 				# Implement this to free up any event listeners or any resource...
+#		super()
 
-	afterBuildUI: => 			# implement this to do something after the UI has been fully constructed
+#	afterBuildUI: => 			# implement this to do something after the UI has been fully constructed
 
-	extraStyles: (aStyler) -> 	#  Implement this to make some styling changes
-		extras = 
-			viewName:
-				propertyName: 'newValue'
+#	extraStyles: (aStyler) -> 	#  Implement this to make some styling changes
+#		extras = 
+#			viewName:
+#				propertyName: 'newValue'
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<!-- <tabTrigger>hello</tabTrigger> -->
+	 <tabTrigger>xvc</tabTrigger> 
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.coffee</scope>
 </snippet>
