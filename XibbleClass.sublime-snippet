@@ -4,7 +4,8 @@
 #
 #   This Xibble based view controller does: {$1}
 #
-navUtils 		= require 'navigationUtilities'
+
+#navUtils 		= require 'navigationUtilities'
 XibbleViewController 	= require 'XibbleViewController'
 
 module.exports = class ${TM_FILENAME} extends XibbleViewController
