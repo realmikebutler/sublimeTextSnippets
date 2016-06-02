@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+Alloy.Globals.ui.colors.
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>globalcolors</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+</snippet>
