@@ -4,16 +4,16 @@
 #
 #   This Xibble based view controller that ${1}
 #
-navUtils 				= require 'navigationUtilities'
 
+#navUtils 		= require 'navigationUtilities'
 XibbleViewController 	= require 'XibbleViewController'
-module.exports = class ${TM_FILENAME/(.coffee)//g} extends XibbleViewController
+module.exports = class ${TM_FILENAME/(List|.coffee)//g} extends XibbleViewController
 
 	defaultXibbleName: -> 		# unfortunately due to minification we can't just use the class name to auto load the xibble
-		"${TM_FILENAME/(.coffee)//g}"
+		"${TM_FILENAME/(List|.coffee)//g}"
 
-#	constructor: (@args) ->
-#		super( @args )
+	constructor: (@args) ->
+		super(@args)
 		
 #	cleanup: => 				# Implement this to free up any event listeners or any resource...
 #		super()
@@ -27,7 +27,7 @@ module.exports = class ${TM_FILENAME/(.coffee)//g} extends XibbleViewController
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>XVC</tabTrigger>
+	<tabTrigger>xvc</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.coffee</scope>
 </snippet>

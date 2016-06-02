@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-Ti.API.info( "$1 = #{JSON.stringify($1, null, 4)}" )
+console.log( "$1 = #{JSON.stringify($1, null, 4)}" )
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>jsondump</tabTrigger>

@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+${1:ClassToTest} = require '${1:ClassToTest}'
+
+${1:ClassToTest}.prototype.load = ->
+	# console.log( '${1:ClassToTest}.load() called')
+
+#${1:ClassToTest}.prototype.afterBuildUI = ->
+# 	console.log( "${1:ClassToTest}Tests.afterBuildUI() called" )
+
+describe '${1:ClassToTest}', ->
+
+	uut = null
+
+	beforeEach ->
+		uut = new ${1:ClassToTest}()
+
+	describe '${2:First suite name'}, ->
+
+		it 'should ${3:test description}', ->
+
+			expect( false ).to.be.true
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>unitTestSkeleton</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.coffee</scope>
+</snippet>
