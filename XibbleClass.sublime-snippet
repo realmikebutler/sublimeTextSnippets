@@ -4,8 +4,8 @@
 #
 #   This Xibble based view controller that ${1}
 #
-navUtils 				= require 'navigationUtilities'
 
+#navUtils 		= require 'navigationUtilities'
 XibbleViewController 	= require 'XibbleViewController'
 module.exports = class ${TM_FILENAME/(List|.coffee)//g} extends XibbleViewController
 
@@ -15,15 +15,15 @@ module.exports = class ${TM_FILENAME/(List|.coffee)//g} extends XibbleViewContro
 	constructor: (@args) ->
 		super(@args)
 		
-	cleanup: => 				# Implement this to free up any event listeners or any resource...
-		super()
+#	cleanup: => 				# Implement this to free up any event listeners or any resource...
+#		super()
 
-	afterBuildUI: => 			# implement this to do something after the UI has been fully constructed
+#	afterBuildUI: => 			# implement this to do something after the UI has been fully constructed
 
-	extraStyles: (aStyler) -> 	#  Implement this to make some styling changes
-		extras = 
-			viewName:
-				propertyName: 'newValue'
+#	extraStyles: (aStyler) -> 	#  Implement this to make some styling changes
+#		extras = 
+#			viewName:
+#				propertyName: 'newValue'
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
