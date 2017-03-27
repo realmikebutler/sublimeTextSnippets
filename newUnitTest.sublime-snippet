@@ -1,19 +1,19 @@
 <snippet>
 	<content><![CDATA[
-${1:ClassToTest} = require '${1:ClassToTest}'
+${TM_FILENAME/(Tests.coffee)//g} = require '${TM_FILENAME/(Tests.coffee)//g}'
 
-${1:ClassToTest}.prototype.load = ->
-	# console.log( '${1:ClassToTest}.load() called')
+${TM_FILENAME/(Tests.coffee)//g}.prototype.load = ->
+	# console.log( '${TM_FILENAME/(Tests.coffee)//g}.load() called')
 
-#${1:ClassToTest}.prototype.afterBuildUI = ->
-# 	console.log( "${1:ClassToTest}Tests.afterBuildUI() called" )
+#${TM_FILENAME/(Tests.coffee)//g}.prototype.afterBuildUI = ->
+# 	console.log( "${TM_FILENAME/(Tests.coffee)//g}Tests.afterBuildUI() called" )
 
-describe '${1:ClassToTest}', ->
+describe '${TM_FILENAME/(Tests.coffee)//g}', ->
 
 	uut = null
 
 	beforeEach ->
-		uut = new ${1:ClassToTest}()
+		uut = new ${TM_FILENAME/(Tests.coffee)//g}()
 
 	describe '${2:First suite name'}, ->
 
